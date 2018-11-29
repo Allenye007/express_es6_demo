@@ -1,0 +1,33 @@
+{
+  "name": "express_demo_es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cluster": "^0.7.7",
+    "cookie-parser": "^1.4.3",
+    "debug": "^4.1.0",
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0",
+    "formidable": "^1.2.1",
+    "ioredis": "^4.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.3",
+    "node-fetch": "^2.3.0",
+    "sequelize": "^4.41.0",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
