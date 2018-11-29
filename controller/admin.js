@@ -14,9 +14,8 @@ class Admin {
     constructor() {
 
     }
-    async login(req, res,) {
+    async login(req, res) {
         let P = req.body;
-        console.log(P)
         if(!P.name || !P.pwd) {
             return res.send({
                 code: 1,
@@ -24,21 +23,33 @@ class Admin {
             })
         }
         try {
-            const data = await AdmidModel.findOne({
+            let data = await AdmidModel.findOne({
                 where: {
                     user_name: P.name
                 }
             })
-            console.log(data);
+            if(data === null) {
+                throw new Error('用户名错误');
+            }
+            if(data.dataValues.user_pwd !== P.pwd) {
+                throw new Error('密码错误');
+            }
+            res.send({
+                code: 0,
+                msg: data
+            })
 
         } catch (E) {
             res.send({
                 code: 2,
-                err:  E,
-                msg: '登录失败'
+                err_msg:  E.message,
             })
         }
-    }
+    };
+
+    async registe() {
+
+    };
 }
 
 
