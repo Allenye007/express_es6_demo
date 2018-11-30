@@ -3,7 +3,7 @@
 const Sequelize = require('sequelize');  // 引包
 let sequelizeInstance = require('../config/config.db').sequelize;  // 引配置
 
-const User = sequelizeInstance.define('users123', {
+const Admin = sequelizeInstance.define('users123', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey:true
@@ -35,7 +35,7 @@ const User = sequelizeInstance.define('users123', {
         defaultValue: 0,
         allowNull: true,  // 允许为空  
     }
-
+    
 },
 {
     freezeTableName: true, // Model 对应的表名将与model名相同
@@ -50,4 +50,4 @@ sequelizeInstance.sync({force: false});
 
 // export default User;
 // module.exports = {User};
-module.exports = User
+module.exports = Admin

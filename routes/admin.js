@@ -11,6 +11,7 @@ const admin = new Admin();
 const router = express.Router();
 
 router.post('/login', admin.login);
+router.post('/registe', admin.registe);
 
 
 
