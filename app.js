@@ -43,17 +43,6 @@ app.use(function(req,res,next){
             next();
         }
     });
-
-    // var cert = fs.readFileSync('./initData/token.pem');  // get public key
-    // jwt.verify(token, cert, function(err, decoded) {
-    //     if(err) {
-    //         next()
-    //     } else {
-    //         console.log(1,decoded,2)
-    //         req.currentUser = decoded;
-    //         next();
-    //     }
-    // });
 });
 
 // 分发路由

@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.post('/login', admin.login);
 router.post('/registe', admin.registe);
-
+router.post('/changePwd', admin.changePwd);
 
 
 

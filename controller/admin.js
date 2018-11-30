@@ -64,10 +64,55 @@ class Admin {
             })
         }
     };
-    // 重置密码
-    // async changePwd(req, res) {
 
-    // };
+    // 重置密码
+    async changePwd(req, res) {
+
+        if(!req.currentUser) {
+            return res.send({
+                code: 1,
+                msg: '无权限，请登录'
+            })
+        }
+
+        let P = req.body;
+
+        try {
+            let data = await AdmidModel.findOne({
+                where: {
+                    user_name: P.name,
+                }
+            });
+            // 判断用户名
+            if(data === null) {
+                throw new Error('用户名不正确');
+            }
+            // 判断原密码
+            if(P.pwd !== data.dataValues.user_pwd) {
+                throw new Error('原密码不正确');
+            }
+            // 判断原密码与新密码
+            if(P.pwd === P.new_pwd) {
+                throw new Error('原密码与新密码相同，请更换新密码')
+            };
+
+            // 改密码
+            data = data.update({
+                user_pwd : P.new_pwd,
+            })
+
+            res.send({
+                code: 0,
+                msg: data
+            })
+
+        } catch (E) {
+            res.send({
+                code: 2,
+                err_msg:  E.message,
+            })
+        }
+    };
 
     // 注册
     async registe(req, res) {
