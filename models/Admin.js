@@ -1,12 +1,13 @@
 
 // 登录相关
 const Sequelize = require('sequelize');  // 引包
-let sequelizeInstance = require('../config/config.db').sequelize;  // 引配置
+const sequelizeInstance = require('../config/config.db').sequelize;  // 引配置
 
 const Admin = sequelizeInstance.define('users123', {
     id: {
         type: Sequelize.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement: true
     },
     user_name: {
         type: Sequelize.STRING,

@@ -68,12 +68,12 @@ class Admin {
     // 重置密码
     async changePwd(req, res) {
 
-        if(!req.currentUser) {
-            return res.send({
-                code: 1,
-                msg: '无权限，请登录'
-            })
-        }
+        // if(!req.currentUser) {
+        //     return res.send({
+        //         code: 1,
+        //         msg: '无权限，请登录'
+        //     })
+        // }
 
         let P = req.body;
 
@@ -97,7 +97,7 @@ class Admin {
             };
 
             // 改密码
-            data = data.update({
+            data = await data.update({
                 user_pwd : P.new_pwd,
             })
 

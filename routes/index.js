@@ -7,6 +7,7 @@ const app = express();
 
 
 const admin = require('./admin.js');
+const order = require('./order.js');
 
 
 
@@ -15,6 +16,7 @@ const admin = require('./admin.js');
 
 // 转发
 app.use('/admin', admin);
+app.use('/order', order);
 
 
 
