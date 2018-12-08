@@ -8,6 +8,7 @@ const app = express();
 
 const admin = require('./admin.js');
 const order = require('./order.js');
+const zxOrder = require('./zxOrder.js');
 
 
 
@@ -17,6 +18,7 @@ const order = require('./order.js');
 // 转发
 app.use('/admin', admin);
 app.use('/order', order);
+app.use('/zxOrder', zxOrder);
 
 
 

@@ -1,49 +1,60 @@
 const csv = require('./csv');
 
 const formatItem = (item) => {
-    let news = item.items;
-    let skuName = '';
-    let skuId = '';
-    let spuName = '';
-    let num = '';
+    let news = item;
+    let oid = '';
+    let uid = '';
     let op = '';
-    let unitPrice = '';
-    let freight = '';
+    let sid = '';
+    let barcode = '';
+    let spu_id = '';
+    let cover = '';
 
-    for(let i = 0; i < news.lengh; i++) {
-        skuName = skuName + news[i].sku_name + '\n';  // 换行
-        skuId = skuId + news[i].sid + '\n';
-        spuName = spuName + news[i].spu_name + '\n';
-        num = num + news[i].num + '\n';
-        op = op + news[i].op + '\n';
-        unitPrice = unitPrice + (news[i].unit_price/100).toFixed(2) + '\n';
-        freight = freight + (news[i].freight/100).toFixed(2) + '\n';
-    }
+    // for(let i = 0; i < news.length; i++) {
+        oid = oid + news.oid + '\n';  // 换行
+        uid = uid + news.uid + '\n';
+        sid = sid + news.sid + '\n';
+        barcode = barcode + news.barcode + '\n';
+        op = op + news.op + '\n';
+        spu_id = spu_id + news.spu_id + '\n';
+        cover = cover + news.cover + '\n';
+    // }
 
     return {
-        skuName: skuName,
-        skuId: skuId,
-        num:num,
+        oid: oid,
+        uid: uid,
+        sid:sid,
         op:op,
-        spuName: spuName,
-        unitPrice: unitPrice,
-        freight: freight,
+        barcode: barcode,
+        spu_id: spu_id,
+        cover: cover,
     }
 }
 
 const downloadModel = (req, res, msg) => {
-    
-    csv.downLoad(requestAnimationFrame, res, (row) => {
+    let b = [];
+    for(var i = 0; i < msg.length; i++) {
+        b.push(formatItem(msg[i].dataValues))
+    }
+    for(var i = 0; i < msg.length; i++) {
+        msg[i].oid= b[i].oid;
+        msg[i].uid= b[i].uid;
+        msg[i].sid= b[i].sid;
+        msg[i].op = b[i].op;
+        msg[i].barcode = b[i].barcode;
+        msg[i].spu_id = b[i].spu_id;
+        msg[i].cover = b[i].cover;
+    }
+    csv.downLoad(req, res, (row) => {
+        console.log(row)
         return {
-            '价格': row.unit_price,
+            '价格': row.cover,
         }
     }, msg, 'table' + new Date().toLocaleString());
 }
 
 
-module.export = {
-    downloadModel
-}
+module.exports = downloadModel
 
 
 // Do you have a lighter lighter no why do you can kindle my heart
