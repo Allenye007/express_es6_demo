@@ -9,7 +9,8 @@ const app = express();
 const admin = require('./admin.js');
 const order = require('./order.js');
 const zxOrder = require('./zxOrder.js');
-
+const zxVendor = require('./zxVendor.js');
+const address = require('./address');
 
 
 
@@ -19,6 +20,8 @@ const zxOrder = require('./zxOrder.js');
 app.use('/admin', admin);
 app.use('/order', order);
 app.use('/zxOrder', zxOrder);
+app.use('/zxVendor', zxVendor);
+app.use('/address', address);
 
 
 

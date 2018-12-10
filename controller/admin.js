@@ -1,5 +1,4 @@
 // 引入模板
-// import AdmidModel from '../models/Admin';
 const AdmidModel = require('../models/Admin');
 
 const crypto = require('crypto');
@@ -29,7 +28,7 @@ class Admin {
         try {
             let data = await AdmidModel.findOne({
                 where: {
-                    user_name: P.name
+                    uid: P.name
                 }
             })
             if(data === null) {
@@ -44,9 +43,9 @@ class Admin {
             md5.update(P.pwd);
             let secret = 'allen';
             const token = jwt.sign({
-                user_name: P.name,
+                uid: P.name,
                 user_pwd: P.pwd,
-                op: data.dataValues.op
+                vip: data.dataValues.vip
             }, secret, {
                 expiresIn: 7200 // 秒
             })
@@ -80,7 +79,7 @@ class Admin {
         try {
             let data = await AdmidModel.findOne({
                 where: {
-                    user_name: P.name,
+                    uid: P.name,
                 }
             });
             // 判断用户名
@@ -127,7 +126,7 @@ class Admin {
 
             let data = await AdmidModel.findOne({
                 where: {
-                    user_name: P.name
+                    uid: P.name
                 }
             })
 
@@ -136,7 +135,7 @@ class Admin {
             }
 
             data = await AdmidModel.create({
-                user_name: P.name,
+                uid: P.name,
                 user_pwd: P.pwd,
                 phone: P.phone
             })

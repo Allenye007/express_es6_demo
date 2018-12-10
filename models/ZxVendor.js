@@ -79,7 +79,7 @@ module.exports = ZxVendor
 // const path = require('path');
 
 // fs.readFile(path.resolve(__dirname, '../initData/vendor.json'), 'utf-8', (err, data) => {
-//     // console.log(JSON.parse(data).data.Items);
+    
 //     ZxVendor.bulkCreate(JSON.parse(data).data.Items)
 //         .then(R => {
 //             console.log(R, 1111)

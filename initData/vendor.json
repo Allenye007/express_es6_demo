@@ -27,22 +27,6 @@
             "id": "1542615151600",
             "phone": "18636308737"
         }, {
-            "credit_code": "91330000704202479R",
-            "contact": "葛文凯",
-            "status": 1,
-            "createdAt": "2018-11-13T08:02:23.682Z",
-            "address": "浙江杭州临安区",
-            "email": "391698247@qq.com",
-            "name": "浙江小王子食品有限公司",
-            "bank_name": "浦发银行临安支行",
-            "tax_type": 3,
-            "remark": "-",
-            "bank_account": " 骆琳",
-            "bank_id": "6217920200828478",
-            "bg_passport_email": "-",
-            "id": "1542096143682",
-            "phone": "15857155663"
-        }, {
             "credit_code": "91110107MA017F4F5N",
             "contact": "王晓东",
             "aptitude": [{
@@ -310,21 +294,6 @@
             "id": "wxxelsm",
             "phone": "18915215756"
         }, {
-            "credit_code": "9928736362289010",
-            "contact": "-",
-            "status": 1,
-            "createdAt": "2018-10-17T07:52:16.304Z",
-            "address": "-",
-            "email": "-",
-            "name": "成都华峰农业有限公司",
-            "bank_name": "-",
-            "tax_type": 3,
-            "remark": "-",
-            "bank_id": "-",
-            "bg_passport_email": "-",
-            "id": "1539762736302",
-            "phone": "-"
-        }, {
             "credit_code": "91440300MA5EXBM68T",
             "contact": "刘巧丽",
             "aptitude": [{
@@ -494,21 +463,6 @@
             "bg_passport_email": "-",
             "id": "shyx",
             "phone": "-17521277130"
-        }, {
-            "credit_code": "test",
-            "contact": "-",
-            "status": 1,
-            "createdAt": "2018-11-20T03:31:58.687Z",
-            "address": "-",
-            "email": "-",
-            "name": "仅用测试",
-            "bank_name": "-",
-            "tax_type": 3,
-            "remark": "-",
-            "bank_id": "-",
-            "bg_passport_email": "-",
-            "id": "1542684718687",
-            "phone": "-"
         }, {
             "credit_code": "91360726343346724F",
             "contact": "黄伟",
