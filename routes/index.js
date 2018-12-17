@@ -12,6 +12,7 @@ const zxOrder = require('./zxOrder.js');
 const zxVendor = require('./zxVendor.js');
 const address = require('./address');
 const goods1 = require('./goods1');
+const goodsDetail1 = require('./goodsDetail1');
 
 
 
@@ -24,6 +25,7 @@ app.use('/zxOrder', zxOrder);
 app.use('/zxVendor', zxVendor);
 app.use('/address', address);
 app.use('/goods1', goods1);
+app.use('/detail', goodsDetail1);
 
 
 
