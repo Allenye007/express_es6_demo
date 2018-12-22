@@ -12,7 +12,7 @@ npm install --save-dev babel-preset-env babel-cli
 
 ​	2.在走catch情况下，没有手动删除表。
 
-
+插件：  shortid
 
 #### 关联表：（hasone/hasmany/belongsto）
 

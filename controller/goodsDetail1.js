@@ -1,4 +1,8 @@
 const GoodsDetail1Model = require('../models/GoodsDetail1');
+const Sku1Model = require('../models/Sku1');
+
+// 每个商品的SKU
+GoodsDetail1Model.hasMany(Sku1Model, {foreignKey: 'gid', sourceKey:'gid', as: 'skus'});
 
 class GoodsDetail1 {
     constructor() {
@@ -10,7 +14,11 @@ class GoodsDetail1 {
             let P = req.query;
 
             let data = await GoodsDetail1Model.findOne({
-                where: P
+                where: P,
+                include: [{
+                    model: Sku1Model,
+                    as: 'skus' ,
+                }],
             })
             console.log(data)
             res.send({

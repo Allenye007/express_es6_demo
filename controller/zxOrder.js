@@ -154,6 +154,24 @@ class ZxOrder {
 
 
     }
+
+    async getInfo(req, res) {
+        try {
+            let data = await ZxOrderModel.findAndCountAll({
+                include: [{
+                    model: ZxOrderItemModel,
+                    as: 'item' ,
+                }]
+            })
+            res.send({
+                code: 0,
+                msg: data
+            })
+        } catch (E) {
+
+        }
+
+    }
     
 }
 

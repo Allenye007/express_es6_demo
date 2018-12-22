@@ -7,6 +7,7 @@ const zxOrder = new ZxOrder();
 
 router.get('/list', zxOrder.queryList);
 router.get('/sendOrder', zxOrder.sendOrder);
+router.get('/info', zxOrder.getInfo);
 
 
 

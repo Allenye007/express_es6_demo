@@ -3,7 +3,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpYW5nemhlbndlaUB6aGVueHVhbi5tb2JpIiwibmFtZSI6ImxpYW5nemhlbmd3ZWkiLCJvcCI6IjAiLCJpYXQiOjE1NDUwNDY5OTcsImV4cCI6MTU0NTA1NDE5N30.eyGGIPVnOM38Ail7nOgc17ouJliMnkOi9QN3nA__uQg'
+let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpYW5nemhlbndlaV90ZXN0QHpoZW54dWFuLm1vYmkiLCJuYW1lIjoibGlhbmd6aGVuZ3dlaSIsIm9wIjoiYXRqdCIsImlhdCI6MTU0NTEzNDA5OSwiZXhwIjoxNTQ1MTQxMjk5fQ.XfE0I6jmk4M5IINmLE7DKGi3qkmIyhB5qdY_vbaOP34'
 let url = `http://bapi.zhenxuan.mobi/cms/goods/list?token=${token}`;
 let url2 = `https://bapi.zhenxuan.mobi/cms/goods/detail?token=${token}`;
 

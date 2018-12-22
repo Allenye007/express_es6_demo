@@ -23,12 +23,14 @@
     "gm": "^1.23.1",
     "ioredis": "^4.2.0",
     "jsonwebtoken": "^8.3.0",
+    "md5": "^2.2.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.3",
     "node-fetch": "^2.3.0",
     "node-xlsx": "^0.12.1",
     "nodejs-websocket": "^1.7.2",
     "sequelize": "^4.41.0",
+    "shortid": "^2.2.14",
     "superagent": "^4.0.0-beta.5"
   },
   "devDependencies": {
