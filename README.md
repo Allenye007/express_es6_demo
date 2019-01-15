@@ -1,18 +1,76 @@
 ### 采坑：
 
-###### 1>
+###### 1）
 
 node不支持部分es6语法 ： import 下载下面的就可以支持
 npm install --save-dev babel-preset-env babel-cli
 
-###### 2>
+###### 2）
 
 在insert vendor 时犯得错误：
 ​	1.没有看清ID是字符串；
 
 ​	2.在走catch情况下，没有手动删除表。
 
-插件：  shortid
+###### 3）事务
+
+在两个事务之间判断error，然后走catch，在rollback时只能回滚第二个，第一个事务操作失败，回滚失败。
+
+```
+错误代码实例⬇️：
+
+let t = await sequelize.transaction();
+try {
+	t,
+	....
+	....
+	if() {
+        throw new Error('err');
+	}
+	t,
+	....
+	....
+	commit();
+}catch(E) {
+    rollback();
+}
+
+
+正确代码实例⬇️⬇️：
+
+
+let t = await sequelize.transaction();
+try {
+
+	if() {
+        throw new Error('err');
+	}
+	
+	
+	t,
+	....
+	....
+	
+	t,
+	....
+	....
+	commit();
+}catch(E) {
+    rollback();
+}
+```
+
+
+
+#### 模块：
+
+| name       | useage        | mark |
+| ---------- | ------------- | ---- |
+| shortid    | 随机KEY       |      |
+| pm2        | 进程管理      |      |
+| captchapng | 随机验证(PNG) |      |
+
+
 
 #### 关联表：（hasone/hasmany/belongsto）
 
@@ -46,5 +104,15 @@ HasOne - 拥有一个
 
 ```
 {transaction: t} 两种写法儿
+model/store.js
 ```
 
+
+
+#### 参数
+
+| 在 router文件夹 |      |      |
+| --------------- | ---- | ---- |
+|                 |      |      |
+|                 |      |      |
+|                 |      |      |
